@@ -74,10 +74,24 @@
             xhttp.send();
         }
     </script>
+    <script src="<?= $this->url_js ?>/alert.js"></script>
 
     <!-- Zoom product -->
     <script src="<?= $this->url_js ?>/zoomsl.js"></script>
     <script src="<?= $this->url_js ?>/script.js"></script>
+
+    
+    <script type="text/javascript" src="<?= $this->url_js ?>/animsition.min.js"></script>
+    <script type="text/javascript">
+        $('.btn-addcart').each(function() {
+            var nameProduct = $(this).parent().find('.product-title').html();
+
+            console.log(nameProduct);
+            $(this).on('click', function() {
+                swal(nameProduct, "is added to cart !", "success");
+            });
+        });
+    </script>
 </body>
 
 </html>

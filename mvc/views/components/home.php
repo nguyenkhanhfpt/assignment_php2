@@ -57,6 +57,9 @@
                                 </p>
                             </div>
                         </a>
+                        <a href="javascript:void(0)" class="btn-addcart">
+                            <i class="fal fa-plus-circle"></i>
+                        </a>
                     </div>
                 </div>
             <?php endforeach ?>
@@ -97,7 +100,7 @@
         </div>
         <a href="<?= $this->url_pro ?>" class="text-decoration-none viewMore">Xem thêm</a>
 
-        
+
         <h4 class="intro-product mt-5">SẢN PHẨM ĐƯỢC XEM NHIỀU</h4>
         <div class="row">
             <?php foreach ($data['productsView'] as $product) : ?>

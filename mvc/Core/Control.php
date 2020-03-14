@@ -1,18 +1,18 @@
 <?php
     class Control{
 
-        public $url = '/khanhnpd02983_asphp2/';
-        public $url_pro = '/khanhnpd02983_asphp2/products';
-        public $url_cart = '/khanhnpd02983_asphp2/cart';
-        public $url_account = '/khanhnpd02983_asphp2/account';
-        public $url_register = '/khanhnpd02983_asphp2/register';
-        public $url_login = '/khanhnpd02983_asphp2/login';
-        public $url_admin = '/khanhnpd02983_asphp2/admin';
-        public $url_admin_handing = '/khanhnpd02983_asphp2/AdminHanding';
-        public $url_js = '/khanhnpd02983_asphp2/public/js';
-        public $url_img = '/khanhnpd02983_asphp2/public/images';
-        public $url_css = '/khanhnpd02983_asphp2/public/css';
-        public $url_lib = '/khanhnpd02983_asphp2/lib';
+        public $url = '/khanhnpd02983_as2/';
+        public $url_pro = '/khanhnpd02983_as2/products';
+        public $url_cart = '/khanhnpd02983_as2/cart';
+        public $url_account = '/khanhnpd02983_as2/account';
+        public $url_register = '/khanhnpd02983_as2/register';
+        public $url_login = '/khanhnpd02983_as2/login';
+        public $url_admin = '/khanhnpd02983_as2/admin';
+        public $url_admin_handing = '/khanhnpd02983_as2/AdminHanding';
+        public $url_js = '/khanhnpd02983_as2/public/js';
+        public $url_img = '/khanhnpd02983_as2/public/images';
+        public $url_css = '/khanhnpd02983_as2/public/css';
+        public $url_lib = '/khanhnpd02983_as2/lib';
 
         public function model($nameModel) {
             require_once './mvc/models/' .$nameModel. '.php';

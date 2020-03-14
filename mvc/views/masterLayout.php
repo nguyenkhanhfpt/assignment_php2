@@ -15,7 +15,7 @@
     <meta property="og:image" content="<?= $this->url_img ?>/photo4.jpg" />
     <meta name="keywords" content="điện thoại, smartphone, iphone, samsung, oppo, điện thoại giá rẻ, dien thoai" />
 
-
+    <!-- Link Jquery and Boostrap -->
     <link rel="stylesheet" href="<?= $this->url_css ?>/bootstrap.min.css">
     <script src="<?= $this->url_js ?>/jquery-3.4.1.min.js"></script>
     <script src="<?= $this->url_js ?>/popper.min.js"></script>
@@ -31,10 +31,13 @@
         });
     </script>
 
+    <!-- link owl-carousel  -->
     <link href="<?= $this->url_css ?>/owl.carousel.css" rel="stylesheet">
 
+    <!-- link css -->
     <link rel="stylesheet" href="<?= $this->url_css ?>/main.css">
     <link rel="stylesheet" href="<?= $this->url_css ?>/all.css">
+    <link rel="stylesheet" href="./public/css/custom.css">
 </head>
 
 <body>
@@ -74,21 +77,21 @@
             xhttp.send();
         }
     </script>
-    <script src="<?= $this->url_js ?>/alert.js"></script>
+
 
     <!-- Zoom product -->
     <script src="<?= $this->url_js ?>/zoomsl.js"></script>
     <script src="<?= $this->url_js ?>/script.js"></script>
 
-    
-    <script type="text/javascript" src="<?= $this->url_js ?>/animsition.min.js"></script>
+    <!-- link sweetalert -->
+    <script src="./public/js/sweetalert.min.js"></script>
     <script type="text/javascript">
         $('.btn-addcart').each(function() {
             var nameProduct = $(this).parent().find('.product-title').html();
 
             console.log(nameProduct);
             $(this).on('click', function() {
-                swal(nameProduct, "is added to cart !", "success");
+                swal(nameProduct, "Đã được thêm vào giỏ hàng !", "success");
             });
         });
     </script>

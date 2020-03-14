@@ -1,0 +1,55 @@
+.btn-addcart {
+    position: absolute;
+    right: .8rem;
+    bottom: .6rem;
+    font-size: 1.3rem;
+    color: black;
+}
+
+.swal-icon--success:after {
+    top: -9px !important;
+}
+
+.swal-title {
+    color: rgba(0,0,0,.65);
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.swal-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.swal-button {
+    background-color: var(-main-color);
+    font-family: ;
+    font-size: 13px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: unset;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.swal-button:hover {
+    background-color: #e65540;
+}
+
+.swal-button:active {
+    background-color: #e65540;
+}
+
+.swal-icon--success__line {
+    height: 5px;
+    background-color: #4faa1c;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 2;
+}
+
+.swal-icon--success__ring {
+    border: 4px solid rgba(138, 225, 88, 0.4);
+    
+}

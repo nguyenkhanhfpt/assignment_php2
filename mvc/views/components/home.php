@@ -57,7 +57,7 @@
                                 </p>
                             </div>
                         </a>
-                        <a href="javascript:void(0)" class="btn-addcart">
+                        <a href="javascript:void(0)" class="btn-addcart" type="button" data-toggle="tooltip" data-placement="bottom" title="Thêm vào giỏ">
                             <i class="fal fa-plus-circle"></i>
                         </a>
                     </div>
@@ -94,6 +94,9 @@
                                 </p>
                             </div>
                         </a>
+                        <a href="javascript:void(0)" class="btn-addcart" type="button" data-toggle="tooltip" data-placement="bottom" title="Thêm vào giỏ">
+                            <i class="fal fa-plus-circle"></i>
+                        </a>
                     </div>
                 </div>
             <?php endforeach ?>
@@ -128,6 +131,9 @@
                                 </p>
                             </div>
                         </a>
+                        <a href="javascript:void(0)" class="btn-addcart" type="button" data-toggle="tooltip" data-placement="bottom" title="Thêm vào giỏ">
+                            <i class="fal fa-plus-circle"></i>
+                        </a>
                     </div>
                 </div>
             <?php endforeach ?>
@@ -137,3 +143,7 @@
 
     </div>
 </div>
+
+<script>
+    $('.btn-addcart').tooltip({ boundary: 'window' })
+</script>

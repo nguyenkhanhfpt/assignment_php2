@@ -50,7 +50,7 @@
             <div class="cart mr-3 mr-sm-5">
                 <a href="<?= $this->url_cart ?>" class="d-inline mr-3 text-decoration-none position-relative">
                     <i class="fal fa-shopping-cart text-white m-0"></i>
-                    <span class="numCart"><?=count($_SESSION['cart'])?></span>
+                    <span class="numCart" id="countCart"><?=count($_SESSION['cart'])?></span>
                 </a>
                 <?php if (isset($_SESSION['maNguoiDung'])) : ?>
                     <a href="<?= $this->url_cart ?>" class="d-inline d-sm-none" id="dropdownMenuLinkMobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

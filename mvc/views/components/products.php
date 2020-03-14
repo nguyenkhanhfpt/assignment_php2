@@ -24,7 +24,7 @@
             <ul class="list-group">
                 <?php foreach ($data['factory'] as $item) : ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center mb-1 border-0 pl-0">
-                        <a href="<?=$this->url_pro .'/filter/'. $item['maThuongHieu']?>" class="text-decoration-none text-dark"><?= $item['tenThuongHieu'] ?></a>
+                        <a href="<?= $this->url_pro . '/filter/' . $item['maThuongHieu'] ?>" class="text-decoration-none text-dark"><?= $item['tenThuongHieu'] ?></a>
                         <span class="badge badge-primary badge-pill bg-transparent text-dark border"><?= $item['count(S.tenSanPham)'] ?></span>
                     </li>
                 <?php endforeach ?>
@@ -35,13 +35,12 @@
             <div class="d-flex flex-column">
                 <?php foreach ($data['topPro'] as $topPro) : ?>
                     <div class="d-flex mb-4">
-                        <a href="<?= $this->url_pro .'/viewProduct/'. $topPro['maSanPham'] ?>">
+                        <a href="<?= $this->url_pro . '/viewProduct/' . $topPro['maSanPham'] ?>">
                             <img src="<?= $this->url_img ?>/<?= $topPro['anhSanPham'] ?>" width="70px" height="70px">
                         </a>
                         <div class="pl-4 pl-md-2">
-                            <p class="mb-2 top-product"><a href="<?= $this->url_pro .'/viewProduct/'. $topPro['maSanPham'] ?>" 
-                            class="text-secondary text-decoration-none"><?= $topPro['tenSanPham'] ?></a></p>
-                            <strong><?=number_format($topPro['giaSanPham'])?> đ</strong>
+                            <p class="mb-2 top-product"><a href="<?= $this->url_pro . '/viewProduct/' . $topPro['maSanPham'] ?>" class="text-secondary text-decoration-none"><?= $topPro['tenSanPham'] ?></a></p>
+                            <strong><?= number_format($topPro['giaSanPham']) ?> đ</strong>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -58,31 +57,35 @@
                                     <div class="sale-box">-<?= $product['giamGia'] ?>%</div>
                                 <?php endif ?>
                                 <?php if ($this->howLong($product['ngayNhap']) <= 3) : ?>
-                                    <img src="<?=$this->url_img?>/new-tag.png" width="40px" height="30px" class="new-box">
+                                    <img src="<?= $this->url_img ?>/new-tag.png" width="40px" height="30px" class="new-box">
                                 <?php endif ?>
                                 <div class="product-box">
                                     <img src="<?= $this->url_img . '/' . $product['anhSanPham']; ?>" class="w-100 product-img">
                                 </div>
                                 <div class="px-3 pb-3 name-product-over">
                                     <a href="" class="product-title"><?= $product['tenSanPham'] ?></a>
+                                    <a href="" class="product-id d-none"><?= $product['maSanPham'] ?></a>
                                     <p class="product-price">
-                                        <?php if($product['giamGia'] > 0): ?>
-                                        <span class="text-muted small"><s><?=number_format($product['giaSanPham'])?> đ</s></span> 
-                                        <?= number_format($this->priceSale($product['giaSanPham'], $product['giamGia'])) ?> đ
-                                        <?php else: ?>
+                                        <?php if ($product['giamGia'] > 0) : ?>
+                                            <span class="text-muted small"><s><?= number_format($product['giaSanPham']) ?> đ</s></span>
+                                            <?= number_format($this->priceSale($product['giaSanPham'], $product['giamGia'])) ?> đ
+                                        <?php else : ?>
                                             <?= number_format($product['giaSanPham']) ?> đ
                                         <?php endif ?>
                                     </p>
                                 </div>
+                            </a>
+                            <a href="javascript:void(0)" class="btn-addcart btn-addcart-pro" type="button" data-toggle="tooltip" data-placement="bottom" title="Thêm vào giỏ">
+                                <i class="fal fa-plus-circle"></i>
                             </a>
                         </div>
                     </div>
                 <?php endforeach ?>
                 <?= $count == 0 ? " Không có sản phẩm nào" : ''; ?>
             </div>
-            
-            <?php if(isset($data['displayViewMore'])) : ?>
-                <span id="numEndViewMore" class="d-none"><?=$data['numEndViewMore']?></span>
+
+            <?php if (isset($data['displayViewMore'])) : ?>
+                <span id="numEndViewMore" class="d-none"><?= $data['numEndViewMore'] ?></span>
                 <a href="javascript:void(0)" id="viewMore" class="text-decoration-none mt-3 mb-4 viewMore">Xem thêm</a>
             <?php endif ?>
 
@@ -91,5 +94,5 @@
 </div>
 
 
-<script src="<?=$this->url_js?>/submit.js"></script>
-<script src="<?=$this->url_js?>/ajaxViewMorePro.js"></script>
+<script src="<?= $this->url_js ?>/submit.js"></script>
+<script src="<?= $this->url_js ?>/ajaxViewMorePro.js"></script>

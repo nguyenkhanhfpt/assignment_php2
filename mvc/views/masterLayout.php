@@ -37,7 +37,8 @@
     <!-- link css -->
     <link rel="stylesheet" href="<?= $this->url_css ?>/main.css">
     <link rel="stylesheet" href="<?= $this->url_css ?>/all.css">
-    <link rel="stylesheet" href="./public/css/custom.css">
+    <link rel="stylesheet" href="<?= $this->url_css ?>/custom.css">
+    
 </head>
 
 <body>
@@ -84,17 +85,33 @@
     <script src="<?= $this->url_js ?>/script.js"></script>
 
     <!-- link sweetalert -->
-    <script src="./public/js/sweetalert.min.js"></script>
+    <script src="<?= $this->url_js ?>/sweetalert.min.js"></script>
     <script type="text/javascript">
         $('.btn-addcart').each(function() {
             var nameProduct = $(this).parent().find('.product-title').html();
+            let idProduct = $(this).parent().find('.product-id').html();
 
-            console.log(nameProduct);
             $(this).on('click', function() {
                 swal(nameProduct, "Đã được thêm vào giỏ hàng !", "success");
+
+                const xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 & this.status == 200) {
+                        document.getElementById('countCart').innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "<?= $this->url ?>Ajax/addCart/" + idProduct, true);
+                xhttp.send();
             });
         });
     </script>
+
+    <script>
+        $('.btn-addcart').tooltip({
+            boundary: 'window'
+        })
+    </script>
+
 </body>
 
 </html>

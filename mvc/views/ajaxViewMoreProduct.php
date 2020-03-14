@@ -14,6 +14,7 @@
                 </div>
                 <div class="px-3 pb-3 name-product-over">
                     <a href="" class="product-title"><?= $product['tenSanPham'] ?></a>
+                    <a href="" class="product-id d-none"><?= $product['maSanPham'] ?></a>
                     <p class="product-price">
                         <?php if ($product['giamGia'] > 0) : ?>
                             <span class="text-muted small"><s><?= number_format($product['giaSanPham']) ?> đ</s></span>
@@ -23,6 +24,9 @@
                         <?php endif ?>
                     </p>
                 </div>
+            </a>
+            <a href="javascript:void(0)" class="btn-addcart btn-addcart-pro" type="button" data-toggle="tooltip" data-placement="bottom" title="Thêm vào giỏ">
+                <i class="fal fa-plus-circle"></i>
             </a>
         </div>
     </div>

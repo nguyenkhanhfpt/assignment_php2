@@ -47,6 +47,7 @@
                             </div>
                             <div class="px-3 pb-3 name-product-over">
                                 <a href="" class="product-title"><?= $product['tenSanPham'] ?></a>
+                                <a href="" class="product-id d-none"><?= $product['maSanPham'] ?></a>
                                 <p class="product-price">
                                     <?php if ($product['giamGia'] > 0) : ?>
                                         <span class="text-muted small"><s><?= number_format($product['giaSanPham']) ?> đ</s></span>
@@ -84,6 +85,7 @@
                             </div>
                             <div class="px-3 pb-3 name-product-over">
                                 <a href="" class="product-title"><?= $product['tenSanPham'] ?></a>
+                                <a href="" class="product-id d-none"><?= $product['maSanPham'] ?></a>
                                 <p class="product-price">
                                     <?php if ($product['giamGia'] > 0) : ?>
                                         <span class="text-muted small"><s><?= number_format($product['giaSanPham']) ?> đ</s></span>
@@ -121,6 +123,7 @@
                             </div>
                             <div class="px-3 pb-3 name-product-over">
                                 <a href="" class="product-title"><?= $product['tenSanPham'] ?></a>
+                                <a href="" class="product-id d-none"><?= $product['maSanPham'] ?></a>
                                 <p class="product-price">
                                     <?php if ($product['giamGia'] > 0) : ?>
                                         <span class="text-muted small"><s><?= number_format($product['giaSanPham']) ?> đ</s></span>
@@ -144,6 +147,3 @@
     </div>
 </div>
 
-<script>
-    $('.btn-addcart').tooltip({ boundary: 'window' })
-</script>

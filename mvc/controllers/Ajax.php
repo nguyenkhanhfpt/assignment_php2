@@ -4,12 +4,14 @@
         protected $product;
         protected $bill;
         protected $account;
+        protected $cart;
 
         function __construct()
         {
             $this->product = $this->model('ModelProduct');
             $this->bill = $this->model('ModelBill');
             $this->account = $this->model('ModelAccount');
+            $this->cart = $this->model('ModelCart');
         }
 
         public function content($value) {
@@ -19,6 +21,15 @@
                 "key" => $value,
                 "data" => $data
             ]);
+        }
+
+        public function addCart($maSanPham) {
+            $getInfo = $this->product->selectOneProduct($maSanPham);
+            $tenSanPham = $getInfo['tenSanPham'];
+            $anhSanPham = $getInfo['anhSanPham'];
+            $giaSanPham = $getInfo['giaSanPham'] - $getInfo['giaSanPham'] / 100 * $getInfo['giamGia'];
+            $this->cart->addProductCart($maSanPham, $tenSanPham, $anhSanPham, $giaSanPham, 1);
+            echo count($_SESSION['cart']);
         }
 
         public function products($value) {

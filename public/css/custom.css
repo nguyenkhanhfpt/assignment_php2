@@ -6,6 +6,11 @@
     color: black;
 }
 
+.btn-addcart-pro {
+    font-size: 1.1rem;
+    bottom: .5rem;
+}
+
 .swal-icon--success:after {
     top: -9px !important;
 }
@@ -22,18 +27,15 @@
 }
 
 .swal-button {
-    background-color: var(-main-color);
+    background-color: #e65540;
     font-family: ;
     font-size: 13px;
     color: white;
-    text-transform: uppercase;
     font-weight: unset;
-    border-radius: 20px;
-    transition: all 0.3s;
 }
 
 .swal-button:hover {
-    background-color: #e65540;
+    background-color: #da3f27;
 }
 
 .swal-button:active {

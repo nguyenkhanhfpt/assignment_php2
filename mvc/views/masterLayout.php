@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>K-Tech - Cửa hàng điện thoại chính hãng</title>
+    <link rel="icon" href="<?= $this->url_img ?>/logo.png" type="image/x-icon">
     <meta name="description" content="K-Tech là cửa hàng bán lẽ điện thoại chính hãng, smartphone, với giá cả ưu đãi" />
 
     <meta property="og:title" content="K-Tech - Cửa hàng điện thoại chính hãng" />
@@ -38,7 +39,7 @@
     <link rel="stylesheet" href="<?= $this->url_css ?>/main.css">
     <link rel="stylesheet" href="<?= $this->url_css ?>/all.css">
     <link rel="stylesheet" href="<?= $this->url_css ?>/custom.css">
-    
+
 </head>
 
 <body>

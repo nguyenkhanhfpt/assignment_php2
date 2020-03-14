@@ -2,12 +2,12 @@
 <?php foreach ($data['products'] as $product) : $count++; ?>
     <div class="col-6 col-sm-4 col-md-3 mb-3 mb-md-2 px-2">
         <div class="product-main border-0">
-            <a href="<?= $this->url ?>/products/viewProduct/<?= $product['maSanPham'] ?>">
+            <a href="<?= $this->url_pro ?>/viewProduct/<?= $product['maSanPham'] ?>">
                 <?php if ($product['giamGia'] > 0) : ?>
                     <div class="sale-box">-<?= $product['giamGia'] ?>%</div>
                 <?php endif ?>
                 <?php if ($this->howLong($product['ngayNhap']) <= 3) : ?>
-                    <img src="<?= $this->url_img ?>/new-tag.png" class="new-box">
+                    <img src="./public/images/new-tag.png" class="new-box">
                 <?php endif ?>
                 <div class="product-box">
                     <img src="<?= $this->url_img . '/' . $product['anhSanPham']; ?>" class="w-100 product-img">
@@ -25,7 +25,7 @@
                     </p>
                 </div>
             </a>
-            <a href="javascript:void(0)" class="btn-addcart btn-addcart-pro" type="button" data-toggle="tooltip" data-placement="bottom" title="Thêm vào giỏ">
+            <a href="javascript:void(0)" class="btn-addcart" type="button" data-toggle="tooltip" data-placement="bottom" title="Thêm vào giỏ">
                 <i class="fal fa-plus-circle"></i>
             </a>
         </div>

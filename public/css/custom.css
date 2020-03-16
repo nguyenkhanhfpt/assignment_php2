@@ -1,3 +1,17 @@
+#loadding{
+    background-color: #fff;
+    background-image: url('../images/loadding.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 6rem;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    z-index: 999;
+    opacity: 1;
+}
+
 .btn-addcart {
     position: absolute;
     right: .8rem;

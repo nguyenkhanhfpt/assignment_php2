@@ -42,7 +42,9 @@
 
 </head>
 
-<body>
+<body onload="loaddingWeb()">
+    <div id="loadding"></div>
+
     <?php require './mvc/views/components/menu.php'; ?>
 
     <?php require './mvc/views/components/' . $data['page'] . '.php'; ?>
@@ -108,10 +110,21 @@
     </script>
 
     <script>
+        let loadding = document.getElementById('loadding');
+
+        function loaddingWeb() {
+            loadding.style.display = 'none';
+            loadding.style.transition = 'visibility 0s cubic-bezier(0.4, 0, 1, 1) 0s, opacity 0.5s linear 0s';
+        }
+    </script>
+
+    <script>
         $('.btn-addcart').tooltip({
             boundary: 'window'
         })
     </script>
+
+
 
 </body>
 

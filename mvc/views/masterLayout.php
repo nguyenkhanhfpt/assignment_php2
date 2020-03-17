@@ -57,7 +57,6 @@
 
     <script src="<?= $this->url_js ?>/scroll.js"></script>
 
-
     <script src="<?= $this->url_js ?>/owl.carousel.js"></script>
     <script src="<?= $this->url_js ?>/owlCarousel.js"></script>
 
@@ -109,22 +108,14 @@
         });
     </script>
 
-    <script>
-        let loadding = document.getElementById('loadding');
+    <script src="<?=$this->url_js?>/loadding.js"></script>
 
-        function loaddingWeb() {
-            loadding.style.display = 'none';
-            loadding.style.transition = 'visibility 0s cubic-bezier(0.4, 0, 1, 1) 0s, opacity 0.5s linear 0s';
-        }
-    </script>
-
+    <!-- tooltip boostrap -->
     <script>
         $('.btn-addcart').tooltip({
             boundary: 'window'
         })
     </script>
-
-
 
 </body>
 

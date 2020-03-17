@@ -1,8 +1,6 @@
 #loadding{
     background-color: #fff;
-    background-image: url('../images/loadding.gif');
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url('../images/loadding.gif')  no-repeat center center;
     background-size: 6rem;
     position: fixed;
     width: 100%;

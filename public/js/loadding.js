@@ -1,3 +1,5 @@
 function loaddingWeb() {
-    $('#loadding').fadeToggle('slow');
+    $('#loadding').css({
+        display: 'none'
+    });
 }

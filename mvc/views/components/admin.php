@@ -47,7 +47,7 @@
         </div>
 
         <form action="<?= $this->url ?>/bill" method="post">
-            <input type="submit" class="mt-3 btn btn-outline-primary" value="Xuất bản Execl">
+            <input type="submit" class="mt-3 btn btn-outline-primary" value="Tải bản thống kê">
         </form>
 
     </div>

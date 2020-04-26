@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>K-Tech - Cửa hàng điện thoại chính hãng</title>
+    <?php if (isset($data['product']['tenSanPham'])) : ?>
+        <title>K-Tech - <?= $data['product']['tenSanPham'] ?></title>
+        <meta property="og:title" content="K-Tech - <?= $data['product']['tenSanPham'] ?>" />
+    <?php else :  ?>
+        <title>K-Tech - Cửa hàng điện thoại chính hãng</title>
+        <meta property="og:title" content="K-Tech - Cửa hàng điện thoại chính hãng" />
+    <?php endif ?>
+
     <link rel="icon" href="<?= $this->url_img ?>/logo.png" type="image/x-icon">
     <meta name="description" content="K-Tech là cửa hàng bán lẽ điện thoại chính hãng, smartphone, với giá cả ưu đãi" />
 
-    <meta property="og:title" content="K-Tech - Cửa hàng điện thoại chính hãng" />
+
     <meta property="og:description" content="K-Tech là cửa hàng bán lẽ điện thoại chính hãng, smartphone, với giá cả ưu đãi" />
     <meta property="og:site_name" content="K-Tech - Cửa hàng điện thoại chính hãng" />
     <meta property="og:type" content="website" />
@@ -43,7 +50,8 @@
 </head>
 
 <body onload="loaddingWeb()">
-    <div id="loadding"></div>
+    <div id="loadding">
+    </div>
 
     <?php require './mvc/views/components/menu.php'; ?>
 
@@ -108,7 +116,7 @@
         });
     </script>
 
-    <script src="<?=$this->url_js?>/loadding.js"></script>
+    <script src="<?= $this->url_js ?>/loadding.js"></script>
 
     <!-- tooltip boostrap -->
     <script>

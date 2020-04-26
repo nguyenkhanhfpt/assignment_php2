@@ -31,8 +31,8 @@
                     </div>
                 </div>
             </form>
-            
-            <?php if($data['product']['soLuong'] <= 0): ?>
+
+            <?php if ($data['product']['soLuong'] <= 0) : ?>
                 <p class="text-danger font-weight-bold">Sản phẩm tạm hết hàng</p>
             <?php endif ?>
         </div>
@@ -150,9 +150,9 @@
                         <p><?= $comment['noiDung'] ?></p>
                     </div>
                 </div>
-                <?php if(isset($_SESSION['maNguoiDung'])) : ?>
-                    <?php if($comment['maNguoiDungBinhLuan'] == $_SESSION['maNguoiDung']) : ?>
-                        <a href="<?=$this->url_pro?>/deleteComment/<?=$comment['maBinhLuan']?>" class="small text-danger float-right">Xóa</a>
+                <?php if (isset($_SESSION['maNguoiDung'])) : ?>
+                    <?php if ($comment['maNguoiDungBinhLuan'] == $_SESSION['maNguoiDung']) : ?>
+                        <a href="<?= $this->url_pro ?>/deleteComment/<?= $comment['maBinhLuan'] ?>" class="small text-danger float-right">Xóa</a>
                     <?php endif ?>
                 <?php endif ?>
             </div>
@@ -161,3 +161,8 @@
     </div>
 
 </div>
+
+
+<!-- Zoom product -->
+<script src="<?= $this->url_js ?>/zoomsl.js"></script>
+<script src="<?= $this->url_js ?>/script.js"></script>

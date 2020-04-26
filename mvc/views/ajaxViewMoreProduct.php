@@ -7,7 +7,7 @@
                     <div class="sale-box">-<?= $product['giamGia'] ?>%</div>
                 <?php endif ?>
                 <?php if ($this->howLong($product['ngayNhap']) <= 3) : ?>
-                    <img src="./public/images/new-tag.png" class="new-box">
+                    <img src="<?= $this->url_img ?>/new-tag.png" width="40px" height="30px" class="new-box">
                 <?php endif ?>
                 <div class="product-box">
                     <img src="<?= $this->url_img . '/' . $product['anhSanPham']; ?>" class="w-100 product-img">
@@ -25,7 +25,7 @@
                     </p>
                 </div>
             </a>
-            <a href="javascript:void(0)" class="btn-addcart" type="button" data-toggle="tooltip" data-placement="bottom" title="Thêm vào giỏ">
+            <a href="javascript:void(0)" class="btn-addcart btn-addcart-pro" type="button" data-toggle="tooltip" data-placement="bottom" title="Thêm vào giỏ">
                 <i class="fal fa-plus-circle"></i>
             </a>
         </div>

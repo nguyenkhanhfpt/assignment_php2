@@ -33,7 +33,6 @@
         }
 
         public function products($value) {
-            
             $this->view('ajaxViewMoreProduct', [
                 "products" => $this->product->selectLimitProducts($value)
             ]);

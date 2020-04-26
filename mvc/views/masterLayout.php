@@ -62,8 +62,8 @@
     <div id="stop" class="scrollTop d-none d-md-block">
         <a href=""><i class="fa fa-angle-double-up text-white"></i></a>
     </div>
-
     <script src="<?= $this->url_js ?>/scroll.js"></script>
+
 
     <script src="<?= $this->url_js ?>/owl.carousel.js"></script>
     <script src="<?= $this->url_js ?>/owlCarousel.js"></script>
@@ -73,26 +73,20 @@
     <script>
         const btn_searchProduct = document.getElementById('formSearch');
 
-        btn_searchProduct.addEventListener('keyup', func);
+        btn_searchProduct.addEventListener('keyup', searchProductsAjax);
 
-        function func() {
+        function searchProductsAjax() {
             let value = this.value;
 
-            const xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 & this.status == 200) {
-                    document.getElementById('content').innerHTML = this.responseText;
+            $.ajax({
+                url: "<?= $this->url ?>Ajax/content/" + value,
+                success: function(result) {
+                    $("#content").html(result);
                 }
-            };
-            xhttp.open("GET", "<?= $this->url ?>Ajax/content/" + value, true);
-            xhttp.send();
+            });
         }
     </script>
 
-
-    <!-- Zoom product -->
-    <script src="<?= $this->url_js ?>/zoomsl.js"></script>
-    <script src="<?= $this->url_js ?>/script.js"></script>
 
     <!-- link sweetalert -->
     <script src="<?= $this->url_js ?>/sweetalert.min.js"></script>
@@ -100,8 +94,9 @@
         $('.btn-addcart').each(function() {
             var nameProduct = $(this).parent().find('.product-title').html();
             let idProduct = $(this).parent().find('.product-id').html();
-
+            console.log(nameProduct);
             $(this).on('click', function() {
+                console.log(nameProduct);
                 swal(nameProduct, "Đã được thêm vào giỏ hàng !", "success");
 
                 const xhttp = new XMLHttpRequest();

@@ -23,6 +23,11 @@
             ]);
         }
 
+        public function checkQuantityPro($maSanPham) {
+            $getQuantity = $this->product->selectOneProduct($maSanPham)['soLuong'];
+            echo $getQuantity;
+        }
+
         public function addCart($maSanPham) {
             $getInfo = $this->product->selectOneProduct($maSanPham);
             $tenSanPham = $getInfo['tenSanPham'];

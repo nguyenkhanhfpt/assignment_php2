@@ -94,19 +94,25 @@
         $('.btn-addcart').each(function() {
             var nameProduct = $(this).parent().find('.product-title').html();
             let idProduct = $(this).parent().find('.product-id').html();
-            console.log(nameProduct);
-            $(this).on('click', function() {
-                console.log(nameProduct);
-                swal(nameProduct, "Đã được thêm vào giỏ hàng !", "success");
 
-                const xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 & this.status == 200) {
-                        document.getElementById('countCart').innerHTML = this.responseText;
+            $(this).on('click', function() {
+                $.ajax({
+                    url: "<?= $this->url ?>Ajax/checkQuantityPro/" + idProduct,
+                    success: function(number) {
+                        if (number > 0) {
+                            swal(nameProduct, "Đã được thêm vào giỏ hàng !", "success");
+                            $.ajax({
+                                url: "<?= $this->url ?>Ajax/addCart/" + idProduct,
+                                success: function(result) {
+                                    $("#countCart").html(result);
+                                }
+                            });
+
+                        } else {
+                            swal(nameProduct, "Sản phẩm tạm không đủ để bạn mua !", "error");
+                        }
                     }
-                };
-                xhttp.open("GET", "<?= $this->url ?>Ajax/addCart/" + idProduct, true);
-                xhttp.send();
+                });
             });
         });
     </script>

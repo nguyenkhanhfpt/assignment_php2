@@ -89,7 +89,7 @@
                     $soTien = $item['soLuong'] * $item['giaSanPham'];
                     $this->detailBill->createNewDetailBill($maHoaDon, $key, $item['soLuong'], $soTien);
 
-                    $body .= "<tr><td>" .$item['tenSanPham'] ."</td><td>" .$item['soLuong']. "</td><td>" .number_format($soTien). " đ</td></tr>";
+                    $body .= "<tr><td style='padding: 5px' >" .$item['tenSanPham'] ."</td><td style='padding: 5px' >" .$item['soLuong']. "</td><td style='padding: 5px'>" .number_format($soTien). " đ</td></tr>";
                     $sum += $soTien;
                 }
                 $_SESSION['cart'] = [];

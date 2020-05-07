@@ -82,7 +82,7 @@
                 $this->bill->createNewBill($maHoaDon, $_SESSION['maNguoiDung']);
 
                 $body = "<h3 style='color: black'>Cảm ơn bạn đã đạt hàng, dưới đây là thông tin đơn hàng bạn đã đặt: </h3> 
-                        <table border='1' style='border-collapse: collapse; text-align: center'><tr>
+                        <table border='1' style='border-collapse: collapse; text-align: center'><tr style='background: #00aefd'>
                         <th>Tên sản phẩm</th><th>Số lượng mua</th><th>Thành tiền</th><tr>";
                 $sum = 0;
                 foreach($_SESSION['cart'] as $key => $item) {

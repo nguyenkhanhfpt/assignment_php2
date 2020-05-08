@@ -1,3 +1,27 @@
+<?php
+    if(count($data['newBill']) > 0) {
+        $dateNewBill = $data['newBill'][0]['thoiGianMua'];
+        $dateNow = date('Y-m-d G:i:s', time());
+    
+        $first_date = strtotime($dateNow);
+        $second_date = strtotime($dateNewBill);
+        $dateDistance = abs($first_date - $second_date);
+    }
+    
+    function timeDistance($time = 0)
+    {
+        if ($time <= 60) {
+            return $time . ' giây trước';
+        } else if ($time <= 3600) {
+            return floor($time / 60) . ' phút trước';
+        } else if ($time <= 86400) {
+            return floor($time / (60 * 60)) . ' giờ trước';
+        } else {
+            return floor($time / (60 * 60 * 24)) . ' ngày trước';
+        }
+    }
+?>
+
 <div class="row">
     <div class="col-7">
         <div class="bg-white p-3">
@@ -86,24 +110,26 @@
 <div role="alert" aria-live="assertive" data-animation="true" aria-atomic="true" class="toast" data-autohide="false">
     <div class="toast-header">
         <img src="<?= $this->url_img ?>/logo.png" class="mr-2" alt="logo">
-        <strong class="mr-auto">K-Shop</strong>
-        <small>11 mins ago</small>
+        <strong class="mr-auto">Thông báo</strong>
+        <small><?= timeDistance($dateDistance) ?></small>
         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="toast-body">
-        Có 2 đơn hàng mới !
+        Có <?= count($data['newBill']) ?> đơn hàng mới !
     </div>
 </div>
 
 
 
 <script>
-    $('.toast').toast('show');
-    setTimeout(function() {
-        $('.toast').remove();
-    }, 5000);
+    if (<?= count($data['newBill']) ?> > 0) {
+        $('.toast').toast('show');
+        setTimeout(function() {
+            $('.toast').remove();
+        }, 5000);
+    }
 </script>
 
 <script>

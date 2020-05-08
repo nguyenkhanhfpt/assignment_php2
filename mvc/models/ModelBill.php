@@ -42,7 +42,7 @@ class ModelBill extends Database
                         INNER JOIN nguoidung AS N ON H.maNguoiDung = N.maNguoiDung 
                         WHERE H.trangThai = 0 
                         GROUP BY H.maHoaDon 
-                        ORDER BY H.ngayMua DESC";
+                        ORDER BY H.thoiGianMua DESC";
         return $this->pdo_query($select);
     }
 
@@ -53,17 +53,6 @@ class ModelBill extends Database
                         INNER JOIN nguoidung AS N ON H.maNguoiDung = N.maNguoiDung 
                         WHERE H.trangThai = 1
                         GROUP BY H.maHoaDon 
-                        ORDER BY H.thoiGianMua DESC";
-        return $this->pdo_query($select);
-    }
-
-    public function selectBillExcel()
-    {
-        $select = "SELECT H.thoiGianMua,C.maHoaDon,C.soLuongMua, N.tenNguoiDung,soTien, S.tenSanPham FROM hoadon AS H 
-                        INNER JOIN chitietdonhang AS C ON H.maHoaDon = C.maHoaDon 
-                        INNER JOIN nguoidung AS N ON H.maNguoiDung = N.maNguoiDung 
-                        INNER JOIN sanpham AS S ON C.maSanPham = S.maSanPham
-                        WHERE H.trangThai = 1 
                         ORDER BY H.thoiGianMua DESC";
         return $this->pdo_query($select);
     }
@@ -101,6 +90,18 @@ class ModelBill extends Database
                         GROUP BY C.maSanPham 
                         ORDER BY SUM(soLuongMua) DESC LIMIT 10";
         return $this->pdo_query($select, $days_ago, $dateNow);
+    }
+
+    
+    public function selectBillExcel()
+    {
+        $select = "SELECT H.thoiGianMua,C.maHoaDon,C.soLuongMua, N.tenNguoiDung,soTien, S.tenSanPham FROM hoadon AS H 
+                        INNER JOIN chitietdonhang AS C ON H.maHoaDon = C.maHoaDon 
+                        INNER JOIN nguoidung AS N ON H.maNguoiDung = N.maNguoiDung 
+                        INNER JOIN sanpham AS S ON C.maSanPham = S.maSanPham
+                        WHERE H.trangThai = 1 
+                        ORDER BY H.thoiGianMua DESC";
+        return $this->pdo_query($select);
     }
 
     public function exportExel()

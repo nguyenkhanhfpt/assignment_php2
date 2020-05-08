@@ -26,7 +26,8 @@
             $this->view('adminLayout', [
                 'page' => 'admin',
                 'products' => $this->product->selectProView(),
-                'topBuyPro' => $this->bill->selectTopBuyProDays()
+                'topBuyPro' => $this->bill->selectTopBuyProDays(),
+                'newBill' => $this->bill->selectNewBill()
             ]);
         }
 

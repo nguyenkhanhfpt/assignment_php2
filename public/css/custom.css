@@ -12,6 +12,15 @@
     background-size: 6rem;
 }
 
+.nav--next:before, .nav--prev:before {
+    font-size: 1.5rem;
+}
+
+.horizontal-dots .dots {
+    display: none;
+}
+
+
 .btn-addcart {
     position: absolute;
     right: .8rem;

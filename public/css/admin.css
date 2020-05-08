@@ -1,3 +1,26 @@
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    min-width: 280px;
+    box-shadow: 0.15rem 0.25rem 0.95rem rgba(8, 164, 255, 0.1);
+}
+
+.toast-header img{
+    width: 20px;
+    height: 20px;
+}
+
+.fade {
+    animation: example;
+    animation-duration: 1.2s;
+}
+
+@keyframes example {
+    0%   {right: -280px}
+    100% {right: 30px}
+  }
+
 .admin-main {
     height: 100%;
 }

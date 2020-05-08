@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 05, 2020 lúc 03:18 PM
+-- Thời gian đã tạo: Th5 07, 2020 lúc 06:01 PM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.1.32
 
@@ -70,7 +70,6 @@ INSERT INTO `chitietdonhang` (`maChiTietDonHang`, `maHoaDon`, `maSanPham`, `soLu
 (94, 836713102, 'oppo-a5-2020-3gb-64gb', 1, 3790500),
 (98, 676562583, 'samsung-galaxy-a70', 1, 8825500),
 (99, 935284217, 'oppo-a5-2020-3gb-64gb', 4, 15162000),
-(100, 638103964, 'iphone-7-plus-32gb', 11, 114846000),
 (101, 54738822, 'iphone-8-plus-64gb', 1, 15990000),
 (108, 842331804, 'oppo-a9-2020', 1, 5990000),
 (109, 331716900, 'iphone-8-plus-64gb', 1, 15990000),
@@ -79,7 +78,15 @@ INSERT INTO `chitietdonhang` (`maChiTietDonHang`, `maHoaDon`, `maSanPham`, `soLu
 (112, 331716900, 'iphone-11-pro-64gb', 2, 58800000),
 (118, 873536823, 'iphone-xs-64gb', 1, 20900000),
 (119, 873536823, 'samsung-galaxy-note-10', 1, 20990000),
-(120, 154124079, 'samsung-galaxy-s10e', 1, 10990000);
+(120, 154124079, 'samsung-galaxy-s10e', 1, 10990000),
+(121, 726383703, 'oppo-a9-2020', 1, 5990000),
+(122, 256245980, 'vivo-u10-4gb-64gb', 1, 3790000),
+(123, 256245980, 'iphone-x', 1, 17991000),
+(124, 389412133, 'samsung-galaxy-a70', 1, 8825500),
+(127, 784946185, 'iphone-xs-64gb', 1, 20900000),
+(128, 784946185, 'iphone-8-plus-64gb', 1, 15990000),
+(129, 221338083, 'vsmart-active-3-4gb-64gb', 1, 3325000),
+(130, 649538473, 'iphone-x', 1, 17991000);
 
 -- --------------------------------------------------------
 
@@ -100,17 +107,22 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`maHoaDon`, `maNguoiDung`, `ngayMua`, `thoiGianMua`, `trangThai`) VALUES
-(53826671, 'khanh', '2020-02-24', '2020-02-24 07:18:19', 1),
-(54738822, 'khanh', '2020-02-29', '2020-03-01 10:19:11', 1),
-(154124079, 'khanh', '2020-03-05', '2020-03-05 20:59:29', 1),
-(331716900, 'nguyenkhanh', '2020-03-05', '2020-03-05 19:46:06', 1),
-(638103964, 'khanh1234', '2020-02-29', '2020-03-01 14:27:20', 1),
-(676562583, 'khanh', '2020-03-29', '2020-03-01 16:14:20', 1),
-(781102331, 'khanh', '2020-02-24', '2020-02-24 20:14:20', 1),
-(836713102, 'khanh', '2020-02-06', '2020-02-06 15:18:20', 1),
-(842331804, 'khanh', '2020-03-03', '2020-03-03 15:55:24', 1),
-(873536823, 'nguyenkhanh', '2020-03-05', '2020-03-05 20:54:27', 1),
-(935284217, 'khanh', '2020-03-29', '2020-03-01 11:14:20', 1);
+(53826671, 'khanh', '2020-04-20', '2020-04-20 07:18:19', 1),
+(54738822, 'khanh', '2020-04-29', '2020-04-29 10:19:11', 1),
+(154124079, 'khanh', '2020-04-16', '2020-04-16 20:59:29', 1),
+(221338083, 'khanh', '2020-05-05', '2020-05-05 16:06:45', 1),
+(256245980, 'nguyenkhanh', '2020-04-23', '2020-04-23 21:29:48', 1),
+(331716900, 'nguyenkhanh', '2020-04-09', '2020-04-09 19:46:06', 1),
+(389412133, 'khanh', '2020-05-01', '2020-05-01 16:27:20', 1),
+(649538473, 'khanh', '2020-05-07', '2020-05-07 10:54:15', 1),
+(676562583, 'khanh', '2020-04-15', '2020-04-15 16:14:20', 1),
+(726383703, 'nguyenkhanh', '2020-04-23', '2020-04-23 14:44:35', 1),
+(781102331, 'khanh', '2020-04-25', '2020-04-25 20:14:20', 1),
+(784946185, 'nguyenkhanh', '2020-05-04', '2020-05-04 08:30:40', 1),
+(836713102, 'khanh', '2020-04-29', '2020-04-29 15:18:20', 1),
+(842331804, 'khanh', '2020-05-04', '2020-05-04 15:55:24', 1),
+(873536823, 'nguyenkhanh', '2020-04-25', '2020-04-25 20:54:27', 1),
+(935284217, 'khanh', '2020-04-30', '2020-04-30 11:14:20', 1);
 
 -- --------------------------------------------------------
 
@@ -135,9 +147,8 @@ CREATE TABLE `nguoidung` (
 --
 
 INSERT INTO `nguoidung` (`maNguoiDung`, `tenNguoiDung`, `email`, `soDienThoai`, `diaChi`, `matKhau`, `gioiTinh`, `anhNguoiDung`, `quyen`) VALUES
-('khanh', 'Nguyen Khanh', 'khanh26122000@gmail.com', '0868003428', '54/82 Nguyễn Lương Bằng', '$2y$10$FfXUFSW.IfaC3/tuvuCZFu/JwyiIVqrS6ORCIKZusrOoqh1RQMftG', 'Nam', '79086051_1097399663959539_1492013755356151808_n.jpg', 1),
-('khanh1234', 'Nguyễn Văn An', 'khanh26122000@gmail.com', '0868003428', '54/82 Nguyễn Lương Bằng', '$2y$10$GB4fjp21PHviFcfOIfh2VetF7lDUZax6FgyDOvez9183YyKikfsli', 'Nam', '80578807_514848325905982_6259964874583965696_n.jpg', 0),
-('nguyenkhanh', 'Nguyen Khanh', 'khanhnpd02983@fpt.edu.vn', '0868003428', '54/82 Nguyễn Lương Bằng, Liên Chiểu, Đà Nẵng', '$2y$10$267LoAvc9AeznvuudOEqBetynTitxbhCjLgYYIhYmPmhWDHvk8YkW', 'Nam', 'user.png', 0);
+('khanh', 'Nguyen Khanh', 'khanh26122000@gmail.com', '0868003428', '54/82 Nguyễn Lương Bằng', '$2y$10$K1hFGpWUxhT7AC90CZAURe8/0aglQ62gyxtjjyF5SgUpqf2WvmKqS', 'Nam', '79086051_1097399663959539_1492013755356151808_n.jpg', 1),
+('nguyenkhanh', 'Khanh 2', 'khanhnpd02983@fpt.edu.vn', '0868003428', '54/82 Nguyễn Lương Bằng, Liên Chiểu, Đà Nẵng', '$2y$10$k49yXgfOgFlgYHaan3gne.DtWQepgYpZ.YBfqk/KZdDnK8tk9dwLy', 'Nam', 'meo.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -163,21 +174,21 @@ CREATE TABLE `sanpham` (
 
 INSERT INTO `sanpham` (`maSanPham`, `maThuongHieu`, `tenSanPham`, `giaSanPham`, `giamGia`, `soLuong`, `anhSanPham`, `soLuotXem`, `ngayNhap`) VALUES
 ('huawei-y9-prime-(2019)', 'hua', 'Huawei Y9 Prime (2019)', 4390000, 0, 26, '637008531190266651_huawei-y9-prime-xanh-1.png', 4, '2020-03-01'),
-('iphone-11-64gb', 'ip', 'iPhone 11 64GB', 21000000, 5, 45, 'ip11.png', 20, '2020-02-22'),
-('iphone-11-pro-64gb', 'ip', 'iPhone 11 Pro 64GB', 30000000, 2, 28, '11-pro-xanh.png', 11, '2020-02-17'),
-('iphone-7-plus-32gb', 'ip', 'iPhone 7 Plus 32GB', 10990000, 5, 30, 'ip7-plus-den-1.png', 32, '2020-03-01'),
-('iphone-8-plus-64gb', 'ip', 'iPhone 8 Plus 64GB', 15990000, 0, 28, 'iphone8-plus-64-vang-1.png', 10, '2020-03-01'),
-('iphone-x', 'ip', 'iPhone Xs', 19990000, 10, 40, 'ip_x.jpg', 14, '2020-03-01'),
-('iphone-xs-64gb', 'ip', 'iPhone Xs 64GB', 20900000, 0, 29, 'iPhone-Xs-Max-gold.png', 11, '2020-02-22'),
-('nokia-2.2-2gb-16gb', 'no', 'Nokia 2.2 2GB/16GB', 1700000, 0, 30, 'nokia-22-den-1.png', 4, '2020-02-22'),
-('oppo-a31-4gb-128gb', 'op', 'Oppo A31 4GB-128GB', 4900000, 0, 0, '637184862253078498_oppo-a31-trang-1.png', 14, '2020-03-01'),
+('iphone-11-64gb', 'ip', 'iPhone 11 64GB', 21000000, 5, 45, 'ip11.png', 31, '2020-02-22'),
+('iphone-11-pro-64gb', 'ip', 'iPhone 11 Pro 64GB', 30000000, 2, 28, '11-pro-xanh.png', 14, '2020-02-17'),
+('iphone-7-plus-32gb', 'ip', 'iPhone 7 Plus 32GB', 10990000, 5, 30, 'ip7-plus-den-1.png', 38, '2020-03-01'),
+('iphone-8-plus-64gb', 'ip', 'iPhone 8 Plus 64GB', 15990000, 0, 27, 'iphone8-plus-64-vang-1.png', 32, '2020-03-01'),
+('iphone-x', 'ip', 'iPhone Xs', 19990000, 10, 38, 'ip_x.jpg', 36, '2020-03-01'),
+('iphone-xs-64gb', 'ip', 'iPhone Xs 64GB', 20900000, 0, 28, 'iPhone-Xs-Max-gold.png', 13, '2020-02-22'),
+('nokia-2.2-2gb-16gb', 'no', 'Nokia 2.2 2GB/16GB', 1700000, 0, 30, 'nokia-22-den-1.png', 5, '2020-02-22'),
+('oppo-a31-4gb-128gb', 'op', 'Oppo A31 4GB-128GB', 4900000, 0, 0, '637184862253078498_oppo-a31-trang-1.png', 22, '2020-03-01'),
 ('oppo-a5-2020-3gb-64gb', 'op', 'Oppo A5 2020 3GB-64GB', 3990000, 5, 26, 'oppoa5.png', 7, '2020-02-20'),
-('oppo-a9-2020', 'op', 'Oppo A9 2020', 5990000, 0, 48, '637185093476652805_oppo-a9-tim-1.png', 8, '2020-03-01'),
-('samsung-galaxy-a70', 'sam', 'Samsung Galaxy A70', 9290000, 5, 39, '636907475981220637_samsung-galaxy-a70-den-1.png', 8, '2020-03-01'),
-('samsung-galaxy-note-10', 'sam', 'Samsung Galaxy Note 10', 20990000, 0, 39, '637008563147812737_SS-note-10-den-1.png', 5, '2020-03-01'),
-('samsung-galaxy-s10e', 'sam', 'Samsung Galaxy S10e', 10990000, 0, 29, 's10e.png', 2, '2020-02-22'),
-('vivo-u10-4gb-64gb', 'vi', 'Vivo U10 4GB-64GB', 3790000, 0, 0, '637147814667049735_vivo-u10-den-1.png', 7, '2020-03-01'),
-('vsmart-active-3-4gb-64gb', 'vin', 'Vsmart Active 3 4GB-64GB', 3500000, 5, 40, 'Vsmart-active-3-xanh-1.png', 3, '2020-03-05');
+('oppo-a9-2020', 'op', 'Oppo A9 2020', 5990000, 0, 47, '637185093476652805_oppo-a9-tim-1.png', 13, '2020-03-01'),
+('samsung-galaxy-a70', 'sam', 'Samsung Galaxy A70', 9290000, 5, 38, '636907475981220637_samsung-galaxy-a70-den-1.png', 14, '2020-03-01'),
+('samsung-galaxy-note-10', 'sam', 'Samsung Galaxy Note 10', 20990000, 0, 39, '637008563147812737_SS-note-10-den-1.png', 6, '2020-03-01'),
+('samsung-galaxy-s10e', 'sam', 'Samsung Galaxy S10e', 10990000, 0, 29, 's10e.png', 3, '2020-02-22'),
+('vivo-u10-4gb-64gb', 'vi', 'Vivo U10 4GB-64GB', 3790000, 0, 0, '637147814667049735_vivo-u10-den-1.png', 12, '2020-03-01'),
+('vsmart-active-3-4gb-64gb', 'vin', 'Vsmart Active 3 4GB-64GB', 3500000, 5, 39, 'Vsmart-active-3-xanh-1.png', 16, '2020-05-03');
 
 -- --------------------------------------------------------
 
@@ -305,19 +316,19 @@ ALTER TABLE `thuonghieu`
 -- AUTO_INCREMENT cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
-  MODIFY `maBinhLuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `maBinhLuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
-  MODIFY `maChiTietDonHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `maChiTietDonHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 
 --
 -- AUTO_INCREMENT cho bảng `thongsosanpham`
 --
 ALTER TABLE `thongsosanpham`
-  MODIFY `maThongSo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `maThongSo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

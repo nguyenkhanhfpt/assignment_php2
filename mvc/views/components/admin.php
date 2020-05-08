@@ -82,6 +82,30 @@
     </div>
 </div>
 
+<!-- Alert new bill -->
+<div role="alert" aria-live="assertive" data-animation="true" aria-atomic="true" class="toast" data-autohide="false">
+    <div class="toast-header">
+        <img src="<?= $this->url_img ?>/logo.png" class="mr-2" alt="logo">
+        <strong class="mr-auto">K-Shop</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="toast-body">
+        Có 2 đơn hàng mới !
+    </div>
+</div>
+
+
+
+<script>
+    $('.toast').toast('show');
+    setTimeout(function() {
+        $('.toast').remove();
+    }, 5000);
+</script>
+
 <script>
     let sort = document.getElementById('statistical');
 

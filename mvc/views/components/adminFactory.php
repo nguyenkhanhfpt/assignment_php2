@@ -33,7 +33,7 @@
     Thêm thương hiệu
 </button>
 
-<div class="collapse" id="newFactory">
+<div class="collapse mb-2" id="newFactory" >
     <div class="box-content">
         <h5 class='intro-product mb-3'>Thêm hãng điện thoại mới</h5>
 

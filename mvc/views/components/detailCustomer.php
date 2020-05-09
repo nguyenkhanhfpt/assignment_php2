@@ -39,4 +39,4 @@
     </div>
 </div>
 
-<a href="<?=$this->url_admin?>/customers" class="btn btn-primary mt-3">Danh sách người dùng</a>
+<a href="<?=$this->url_admin?>/customers" class="btn btn-primary my-3">Danh sách người dùng</a>

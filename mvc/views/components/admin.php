@@ -71,7 +71,7 @@
         </div>
 
         <form action="<?= $this->url ?>/bill" method="post">
-            <input type="submit" class="mt-3 btn btn-outline-primary" value="Tải bản thống kê">
+            <input type="submit" class="my-3 btn btn-outline-danger" value="Tải bản thống kê">
         </form>
 
     </div>
@@ -128,7 +128,7 @@
         $('.toast').toast('show');
         setTimeout(function() {
             $('.toast').remove();
-        }, 5000);
+        }, 6000);
     }
 </script>
 

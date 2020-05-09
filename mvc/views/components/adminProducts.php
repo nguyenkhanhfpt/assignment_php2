@@ -39,4 +39,4 @@
 
 </div>
 
-<a href="<?=$this->url_admin?>/viewNewPro" class="btn btn-primary mt-3" >Thêm sản phẩm</a>
+<a href="<?=$this->url_admin?>/viewNewPro" class="btn btn-primary my-3" >Thêm sản phẩm</a>
